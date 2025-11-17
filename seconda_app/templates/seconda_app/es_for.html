@@ -61,5 +61,12 @@
     {%endfor%}
    
 
+    <h2>Contenuto del dizionario</h2>
+    <ul>
+        {% for key, value in my_dict.items %}
+            <li>{{ key }}: {{ value }}</li>
+        {% endfor %}
+    </ul>
+
 </body>
 </html>
