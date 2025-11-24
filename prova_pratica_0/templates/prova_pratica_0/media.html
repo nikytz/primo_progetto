@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block title %} {{ block.super }} | Somma {% endblock title %}
+{% block content %}
+    <b>media= {{media}}</b><br/>
+    
+    {% if media > 6 %}
+        <p><i style= "color: green">media= {{media}}</i></p>
+    {% elif media < 6 %}
+        <p><i style= "color: red">media= {{media}}</i></p>
+    {% elif media == 6 %}
+        <p><i style= "color: black">media= {{media}}</i></p>
+     {% endif %}
+{% endblock content %}
