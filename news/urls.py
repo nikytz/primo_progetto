@@ -7,3 +7,6 @@ urlpatterns = [
     path('home',home,name="homepage"),
     path("articoli/<int:pk>", articoloDetailView, name="articolo_detail")
 ]
+
+
+
