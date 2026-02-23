@@ -118,21 +118,27 @@ def queryBase(request):
     articoli_minime_visualizzazioni = Articolo.objects.filter(visualizzazioni__gte=100)
 
     #15. Tutti gli articoli che contengono una certa parola nel titolo:
-    articoli_parola = Articolo.objects.filter(titolo__icontains='importante')
+    articoli_parola = Articolo.objects.filter(titolo__contains='importante')
 
-    articoli_mese_anno=Articolo.objects.filter(data__month=1,data__year=2023)
+    #16. Articoli pubblicati in un certo mese di un anno specifico:
+    articoli_mese_anno=Articolo.objects.filter(data__month=1, data__year=2023)
 
+    #17. Giornalisti con almeno un articolo con piu di 100 visualizzazioni:
     giornalisti_con_articoli_popolari= Giornalista.objects.filter(articoli__visualizzazioni__gte=100).distinct()
-
+    
     data= datetime.date(1990,1,1)
     visualizzazioni=50
 
+    #18. ...scrivi quali articoli vengono selezionati:
     articoli_con_and= Articolo.objects.filter(giornalista__anno_di_nascita__gt=data,visualizzazioni__gte=visualizzazioni)
 
     from django.db.models import Q
+    #19. ...scrivi quali articoli vengono selezionati:
     articoli_con_or= Articolo.objects.filter(Q(giornalista__anno_di_nascita__gt=data)|Q(visualizzazioni__lte=visualizzazioni))
 
     # Crea il dizionario context
+
+    #20. ...scrivi quali articoli vengono selezionati:
     articoli_con_not= Articolo.objects.filter(~Q(giornalista__anno_di_nascita__lt=data))
 
     articoli_con_not = Articolo.objects.exclude(giornalista__anno_di_nascita__lt=data)
@@ -149,7 +155,16 @@ def queryBase(request):
         'articoli_periodo': articoli_periodo,
         'giornalisti_nati':  giornalisti_nati,
         'articoli_giornalisti': articoli_giornalisti,
-
+        'giornalista_giovane': giornalista_giovane,
+        'giornalista_anziano': giornalista_anziano,
+        'ultimi': ultimi,
+        'articoli_minime_visualizzazioni':articoli_minime_visualizzazioni,
+        'articoli_parola':articoli_parola,
+        'articoli_mese_anno': articoli_mese_anno,
+        'giornalisti_con_articoli_popolari': giornalisti_con_articoli_popolari,
+        'articoli_con_and':articoli_con_and,
+        'articoli_con_or':articoli_con_or,
+        'articoli_con_not':articoli_con_not,
     }
 
     return render (request, 'news/query_base.html', context)
