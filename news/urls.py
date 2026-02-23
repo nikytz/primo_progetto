@@ -8,8 +8,7 @@ urlpatterns = [
     path("articoli/<int:pk>", articoloDetailView, name="articolo_detail"),
     path("lista_articoli/<int:pk>", listaArticoli, name="lista_articoli"),
     path("query_base", queryBase, name="query_base"),
-    
-    
+    path('',index,name='index'),
 ]
 
 
