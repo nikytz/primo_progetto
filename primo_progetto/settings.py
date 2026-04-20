@@ -40,7 +40,11 @@ INSTALLED_APPS = [
     'prima_app',
     'seconda_app',
     'prova_pratica_0',
-    'news'
+    'news',
+    'voti',
+    'forms_app',
+    'crispy_forms',
+    'crispy_bootstrap4'
 ]
 
 MIDDLEWARE = [
@@ -62,7 +66,9 @@ TEMPLATES = [
                  os.path.join(BASE_DIR, 'templates'),
                  os.path.join(BASE_DIR, 'seconda_app/templates/seconda_app'),
                  os.path.join(BASE_DIR, 'prova_pratica_0/templates/prova_pratica_0'),
-                 os.path.join(BASE_DIR, 'news/templates/news')
+                 os.path.join(BASE_DIR, 'news/templates/news'),
+                 os.path.join(BASE_DIR, 'voti/templates/voti'),
+                 os.path.join(BASE_DIR, 'forms_app/templates/forms_app')
                  ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -129,3 +135,4 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

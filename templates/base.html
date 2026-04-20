@@ -1,4 +1,7 @@
 <!doctype html>
+ <!-- Includi Font Awesome CSS -->
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
  {% load static %}
 <html lang="en">
   <head>
@@ -63,7 +66,7 @@
           <a class="dropdown-item" href="{% url 'prova_pratica_0:media'%}">Media</a>
 
         </div>
-
+      </li>
 
          <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -76,14 +79,36 @@
           <a class="dropdown-item" href="{% url 'news:lista_articoli'%}">Lista articoli</a>
           <a class="dropdown-item" href="{% url 'news:query_base'%}">Query base</a>
           <a class="dropdown-item" href="{% url 'news:giornalistaDetailView' 1%}">Giornalista detail</a>
-          
-
-
-
         </div>
       </li>
 
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Voti
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="{% url 'voti:materie'%}">Materie</a>
+          <a class="dropdown-item" href="{% url 'voti:voti' %}">Voti</a>
+          <a class="dropdown-item" href="{% url 'voti:max_min' %}">Max e Min</a>
+          <a class="dropdown-item" href="{% url 'voti:media' %}">Media</a>
+          
 
+        </div>
+      </li>
+       
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Forms app
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="{% url 'forms_app:contatto'%}">Contatti</a>
+          <a class="dropdown-item" href="{% url 'forms_app:lista_contatti' %}">Lista contatti</a>
+          <a class="dropdown-item" href="{% url 'forms_app:elimina_contatto' 1 %}">Elimina contatto</a>
+          <a class="dropdown-item" href="{% url 'forms_app:modifica_contatto' 1 %}">Modifica contatto</a>
+
+        </div>
+      </li>
        
     </ul>
   </div>
