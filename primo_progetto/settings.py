@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'voti',
     'forms_app',
     'crispy_forms',
-    'crispy_bootstrap4'
+    'crispy_bootstrap4',
+    'accounts'
 ]
 
 MIDDLEWARE = [
@@ -68,7 +69,8 @@ TEMPLATES = [
                  os.path.join(BASE_DIR, 'prova_pratica_0/templates/prova_pratica_0'),
                  os.path.join(BASE_DIR, 'news/templates/news'),
                  os.path.join(BASE_DIR, 'voti/templates/voti'),
-                 os.path.join(BASE_DIR, 'forms_app/templates/forms_app')
+                 os.path.join(BASE_DIR, 'forms_app/templates/forms_app'),
+                 
                  ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -136,3 +138,7 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+LOGIN_REDIRECT_URL='/'
+LOGOUT_REDIRECT_URL='/'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
