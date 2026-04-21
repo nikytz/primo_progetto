@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'forms_app',
     'crispy_forms',
     'crispy_bootstrap4',
-    'accounts'
+    'accounts',
+    'api'
 ]
 
 MIDDLEWARE = [
@@ -70,6 +71,7 @@ TEMPLATES = [
                  os.path.join(BASE_DIR, 'news/templates/news'),
                  os.path.join(BASE_DIR, 'voti/templates/voti'),
                  os.path.join(BASE_DIR, 'forms_app/templates/forms_app'),
+                 os.path.join(BASE_DIR, 'api/templates/api'),
                  
                  ],
         'APP_DIRS': True,
